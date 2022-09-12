@@ -8,7 +8,7 @@ function BinarioADecimal(num) {
 	         num = num.toString().split('').reverse();
                  num.forEach((e, ndx) => e === '1' ? dec += Math.pow(2, ndx) : void 0);
            */
-
+/*
                const len = num.length;
 	         let dec = 0;
             for (let   i = 0; i < len; i++) {
@@ -16,6 +16,9 @@ function BinarioADecimal(num) {
             }
 
 	return dec;
+*/
+
+	for(var c=num.length,d=0,a=0;a<c;a++)d+=+num[a]*Math.pow(2,c-1-a);return d
 }
 
 function DecimalABinario(num)
