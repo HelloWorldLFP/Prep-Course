@@ -40,7 +40,7 @@ function DecimalABinario(num)
 	   let bin = '';
 	while (num > 0){ 
       		bin += num % 2; 
-                num = Math.floor(num / 2); 
+                num = ~~(num / 2); 
         } bin = bin.split('').reverse().join('');
 
 	return bin;
