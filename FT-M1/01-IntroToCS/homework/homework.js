@@ -36,7 +36,7 @@ function DecimalABinario(num)
 	      num=Math.floor(num / 2);
 	} return bin.join('');
 */
-
+/*
 	   let bin = '';
 	while (num > 0){ 
       		bin += num % 2; 
@@ -44,6 +44,11 @@ function DecimalABinario(num)
         } bin = bin.split('').reverse().join('');
 
 	return bin;
+*/
+// optimizada
+for(var b="";0<num;)b+=num%2,num=~~(num/2);return b=b.split("").reverse().join("")
+	
+	
 }
 module.exports = {
   BinarioADecimal,
