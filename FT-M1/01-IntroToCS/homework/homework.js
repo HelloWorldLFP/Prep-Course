@@ -20,7 +20,7 @@ function BinarioADecimal(num) {
 
 //	for(var c=num.length,d=0,a=0;a<c;a++)d+=+num[a]*Math.pow(2,c-1-a);return d
 // optimizado
-	for(var c=num.length,d=0,a=0;a<c;a++)d+=+num[a]*2**(c-1-a);return d
+	for(var c=num.length,d=0,a=0;a<c;a++)d+=num[a]*2**(c-1-a);return d
 
 }
 
