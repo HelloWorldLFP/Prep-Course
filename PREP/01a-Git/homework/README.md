@@ -146,7 +146,7 @@ Para hacer esto, usaremos el comando "add":
 Esto agregó nuestros cambios al historial. Ahora, para guardar el historial, usaremos el comando "commit". Commit agarrará todos nuestros cambios y los guardará en el historial de git. Para futuras referencias, podrás añadir un mensaje acerca de los cambios hechos, esto facilitará ir atrás en el historial y encontrar los cambios que vos (o cualquiera) busque en el futuro en caso de necesitarlo. Siempre es una buena idea hacer una descripción clara y concisa de los cambios. Un _shorthand_ para añadir un mensaje, es usar la bandera (flag) "-m" y escribir el mensaje a continuación usando comillas.
 
 ```bash
-  git commit -m 'Agregado nuevo archivo, archivo-ejemplo.js'
+  git commit -m :q 'Agregado nuevo archivo, archivo-ejemplo.js'
 ```
 
 Ahora que guardamos nuestros cambios localmente, vamos a querer compartir esos cambios en Github. Para ello, usaremos "push":
