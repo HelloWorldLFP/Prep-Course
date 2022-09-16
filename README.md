@@ -1,6 +1,6 @@
 ![HenryLogo](https://d31uz8lwfmyn8g.cloudfront.net/Assets/logo-henry-white-lg.png)
 
-# Prep Coursey M1
+# Prep Course y M1
 
 #### Introducción
 
