@@ -11,7 +11,79 @@
   El ábrol utilizado para hacer los tests se encuentra representado en la imagen bst.png dentro del directorio homework.
 */
 
-function BinarySearchTree() {}
+function BinarySearchTree(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+BinarySearchTree.prototype.size = function(){
+  if (this.left === null && this.right === null) return 1;
+  if (this.left !== null && this.right === null) return 1+this.left.size();
+  if (this.left === null && this.right !== null) return 1+this.right.size();
+  if (this.left !== null && this.right !== null) return 1+this.left.size() +  this.right.size();
+}
+
+BinarySearchTree.prototype.insert = function(value){
+  if (value > this.value) {
+    if (this.right!==null) {
+        this.right.insert(value);
+    } else {
+      this.right = new BinarySearchTree(value);
+    }
+  }
+  else {
+    if (this.left!==null) {
+        this.left.insert(value);
+    } else {
+        this.left = new BinarySearchTree(value);
+    }
+  }
+}
+
+
+BinarySearchTree.prototype.contains = function(value){
+  if (this.value === value) return true;
+  if (value > this.value) {
+    if (this.right === null) return false;
+    else return this.right.contains(value);
+  }
+  if (value < this.value) {
+      if (this.left === null) return false;
+      else return this.left.contains(value);
+  }
+}
+
+BinarySearchTree.prototype.depthFirstForEach = function(callback,order){
+if (order==="pre-order") {
+  callback(this.value);
+  if (this.left!==null)  this.left.depthFirstForEach(callback,order);
+  if (this.right!==null) this.right.depthFirstForEach(callback,order);
+} else if (order==="post-order") {
+  if (this.left!==null)  this.left.depthFirstForEach(callback,order);
+  if (this.right!==null) this.right.depthFirstForEach(callback,order);
+  callback(this.value);  
+} else {
+  if (this.left!==null)  this.left.depthFirstForEach(callback,order);
+  callback(this.value);  
+  if (this.right!==null) this.right.depthFirstForEach(callback,order);
+}
+}
+
+BinarySearchTree.prototype.breadthFirstForEach = function(callback,array){
+  if (!array) {
+    var array=[];
+  }
+  if (this.left!==null){
+    array.push(this.left);
+  }
+  if (this.right!==null){
+    array.push(this.right);
+  }
+  callback(this.value);
+  if (array.length>0){
+    array.shift().breadthFirstForEach(callback,array);
+  }
+}
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
